@@ -8,7 +8,7 @@
     {
       "@id": "https://repolex.ai/r/optuna/optunahub/commit/1b12bdbccade2e17b3be04125431a3912ed72618",
       "git:hexsha": "1b12bdbccade2e17b3be04125431a3912ed72618",
-      "repolex:parseStatus": "metadata_complete"
+      "repolex:parseStatus": "ast_complete"
     },
     {
       "@id": "https://repolex.ai/r/optuna/optunahub/commit/39118bf54bebde74a43002ad0f4fa2e75b9b4615",
