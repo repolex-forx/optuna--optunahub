@@ -1,1 +1,142 @@
-Initializing
+# Repolex Knowledge Graph of optuna/optunahub
+
+RDF knowledge graph data for [optuna/optunahub](https://github.com/optuna/optunahub), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download optuna/optunahub
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 1b12bdbccade2e17b3be04125431a3912ed72618
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── 1b12bdbccade2e17b3be04125431a3912ed72618
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 0b1ee0b2f772847b00cac1b942f851a5e34db7d4.nq.gz
+│   ├── 0d415b0ac7c19e45643b6353c89071a4b3b5f05b.nq.gz
+│   ├── 11c35c1f7a110e952b700a61af5916629e99efac.nq.gz
+│   ├── 175654aa4f45da1ce2c22ca0385f3cdfc54cd4d1.nq.gz
+│   ├── 1b6c59ebbaa0979d4f4b9f95b6b4889013d4a8d5.nq.gz
+│   ├── 1e78869f4915ec4e15d03e2d64cf456464a696ff.nq.gz
+│   ├── 23625474f6b75363e4c7c97c0808835597a8141c.nq.gz
+│   ├── 2ac110341f2f984ac3d561f4ee19a2b58403c14d.nq.gz
+│   ├── 33ef57e81cbbf63067a3ccd38af466bef14cee9c.nq.gz
+│   ├── 35b5a9d3b9294293a0ad599b0ecb9b9846d6d423.nq.gz
+│   ├── 380b0c207c96b24358042109a0fcebf9644c3e45.nq.gz
+│   ├── 39bf6feacb359ed069c229a1b1f630aa1b95d0a4.nq.gz
+│   ├── 39e412dc6194a457cdd864358020c2a3c63ce067.nq.gz
+│   ├── 3b96401d02eb168cdb88d959acb23b5565749290.nq.gz
+│   ├── 3bee02bc32f1a9c0bb3dc4c023736cae73f3b7a9.nq.gz
+│   ├── 3e024faacb86e6c3cad73654232dbe06c6e8e153.nq.gz
+│   ├── 42af00864d15f80e2440b15ea3a420e3b4762f3a.nq.gz
+│   ├── 44cf88aaf26e8256a74cf705a0a9a1c7cc4f62c9.nq.gz
+│   ├── 480d15f9f423d2966d6d7200c91b56d00b07ee27.nq.gz
+│   ├── 4c2d9309a654aeadd4df37bb4d03663196fe4e17.nq.gz
+│   ├── 5789f9edcdfa32c1c69f369a5e54a51d6363bd53.nq.gz
+│   ├── 59314d4bc08140e0e1dfcd34f74ed8fe6debc403.nq.gz
+│   ├── 5ace4600a1f26e6892982f3e2f069ebfab108d87.nq.gz
+│   ├── 5c84ea029ae85292249b73eeba39f029786b1e9a.nq.gz
+│   ├── 62cfcdfbbe93a797b4af0bfd06685bd85500ea95.nq.gz
+│   ├── 72429584d2f16670c297336f70b9f67286d0c933.nq.gz
+│   ├── 72f4db620a8d7570d8334f57e2e2a66e09366b17.nq.gz
+│   ├── 747ffb7b3033659bdd2d1e6eae41ecb00358a45e.nq.gz
+│   ├── 752d6c8074256118b4459f611fb0acb89318458f.nq.gz
+│   ├── 767f88bd5b380786cc1dc18d707c46f1d5cbca66.nq.gz
+│   ├── 8ccdc1620380ab0829a73f91909b37f55d399a5f.nq.gz
+│   ├── 95efbd1bc96f8f3210424a216c1e28d5ec0af08c.nq.gz
+│   ├── 9638f46750da62426e3749d5995e956551bd6f7f.nq.gz
+│   ├── 96a7a66783078e0de15a6b93dd091b7c088a48c0.nq.gz
+│   ├── 9d5b791568c567c16763741fe02266691b16b27f.nq.gz
+│   ├── 9dbc5b3b5b56d75318dff492462d2bdd851c0534.nq.gz
+│   ├── a0a3828e4ec31a665f483efc5ecbec929a703171.nq.gz
+│   ├── a189448d9977b662b424196aed3047fe9b51e18c.nq.gz
+│   ├── a7962c8fec97a1ba6c666c6e2bdbc04340643857.nq.gz
+│   ├── ae8114be8c7cc683dcc9b20746059aec1865b0cd.nq.gz
+│   ├── af7cd643fdbaab23b2831a324d925cee061cc23b.nq.gz
+│   ├── b33082d744d6fbe340267f5bbbe9525bd6cbb825.nq.gz
+│   ├── b71ea48a7a6da66b3794d692705e6e5af8112cd0.nq.gz
+│   ├── b98fb611a04a59ded8d0b48053775e84e07f1977.nq.gz
+│   ├── be4a11e41b354c38dfd21cb8242e94a8b36ab414.nq.gz
+│   ├── c05609fc50d139fcafe3d0dd543add2dab94f2d2.nq.gz
+│   ├── c46fd67957844b94c93b167c2b61581550318eac.nq.gz
+│   ├── c758656f1add1a9a5f29712e32aa9e2e86fd8f10.nq.gz
+│   ├── cc48f3c2733e0d611a76d0b0e8af814662e0c0a3.nq.gz
+│   ├── cf8e76416d40834b97a572f8f6f4b0aa7d7dc800.nq.gz
+│   ├── d0c3cbf1020d5c292abdedf27627c6abe25e2293.nq.gz
+│   ├── d59c32563f25283601aba13df34c3963055d16f4.nq.gz
+│   ├── db41e669ad7030d833e204f710347453f1215825.nq.gz
+│   ├── dbbe7f799131608fe34e64415f038839f932bc40.nq.gz
+│   ├── e69de29bb2d1d6434b8b29ae775ad8c2e48c5391.nq.gz
+│   ├── e8b2ac052264d666b9c8c38e27304d43e14e415a.nq.gz
+│   ├── e935e8582f3d70f6575fbc5c097fdda96b7b8955.nq.gz
+│   ├── ef47ca21c785999135bc28395e5f60e00dca2e14.nq.gz
+│   ├── f04f1076b8f585ffa265b61401d0d7b9fb611709.nq.gz
+│   ├── f37d0c44a76da1aad9b1a985ee19e771c2ba6a56.nq.gz
+│   ├── f8e72a327565a17bae363898164af66f435e36cd.nq.gz
+│   ├── fe2ba2dc5a66730375e5764310f23dc625a8fc04.nq.gz
+│   └── ff327e6ca4d0b1104426c5b3de5aecea78fad758.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── 1b12bdbccade2e17b3be04125431a3912ed72618.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 71 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[optuna/optunahub](https://github.com/optuna/optunahub)
+
+---
+*Parsed on 2026-10-28 by [repolex](https://repolex.ai)*
